@@ -20,6 +20,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 /**
  * @author luis.lopez
  * Estoy en la rama develop
+ * meto una segunda línea para master
  */
 public interface ReservationManager {
 	
