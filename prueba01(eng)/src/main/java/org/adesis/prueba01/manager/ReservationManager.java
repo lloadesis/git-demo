@@ -17,6 +17,10 @@ import org.adesis.prueba01.model.ReservationResponse;
 import org.hibernate.validator.constraints.NotEmpty;
 
 
+/**
+ * @author luis.lopez
+ *
+ */
 public interface ReservationManager {
 	
 	/*Las excepciones de los bean Validation se recubrirían y se lanzaría un dto genérico
