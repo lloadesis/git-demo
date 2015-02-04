@@ -7,6 +7,10 @@ import org.adesis.prueba01.model.ReservationRequest;
 import org.adesis.prueba01.model.ReservationResponse;
 import org.adesis.prueba01.reservation.dao.IReservationDao;
 
+/**
+ * @author luis.lopez
+ * Segunda rama de prueba
+ */
 public class ReservationManagerService implements ReservationManager {
 
 	private IReservationDao reservationDao;
