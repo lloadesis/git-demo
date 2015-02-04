@@ -22,7 +22,6 @@ import org.hibernate.validator.constraints.NotEmpty;
  * Estoy en la rama develop
  * meto una segunda línea para master
  * tercer arreglo de git que había que hacer también
- * otra línea modificada moar
  */
 public interface ReservationManager {
 	
