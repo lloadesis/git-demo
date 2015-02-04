@@ -1,0 +1,103 @@
+package org.adesis.prueba01.manager.impl;
+
+import java.util.Arrays;
+
+import org.adesis.prueba01.manager.ReservationManager;
+import org.adesis.prueba01.model.ReservationRequest;
+import org.adesis.prueba01.model.ReservationResponse;
+import org.adesis.prueba01.reservation.dao.IReservationDao;
+
+/**
+ * @author luis.lopez
+ * Segunda rama de prueba
+ * Tercera línea de prueba
+ */
+public class ReservationManagerService implements ReservationManager {
+
+	private IReservationDao reservationDao;
+	
+	public IReservationDao getReservationDao(){
+		return reservationDao;
+	}
+	
+	public void setReservationDao (IReservationDao reservationDao){
+		this.reservationDao=reservationDao;
+	}
+	
+	public ReservationResponse searchReservation(int id){
+		ReservationResponse response = new ReservationResponse();
+		
+		try{
+			response.setReservations(Arrays.asList(getReservationDao().searchReservation(id)));
+		}
+		
+		catch (Exception e){
+			response.setSuccess(false);
+			response.setErrorMsg(e.getClass()+": " + e.getMessage());
+		}
+		
+		return response;
+	}
+	
+	public ReservationResponse showAll(){
+		ReservationResponse response = new ReservationResponse();
+		
+		try {
+			response.setReservations(getReservationDao().showAll());
+		}
+		
+		catch (Exception e){
+			response.setSuccess(false);
+			response.setErrorMsg(e.getClass()+": " + e.getMessage());
+		}
+		
+		return response;
+	}
+	
+	public ReservationResponse addReservation(ReservationRequest request){
+		ReservationResponse response = new ReservationResponse();
+		
+		try{
+			getReservationDao().addReservation(request.getReservation());
+		}
+		
+		catch (Exception e){
+			response.setSuccess(false);
+			response.setErrorMsg(e.getClass()+": " + e.getMessage());
+		}
+		
+		return response;
+	}
+	
+	public ReservationResponse changeReservation (ReservationRequest request){
+		ReservationResponse response = new ReservationResponse();
+		
+		try{
+			getReservationDao().changeReservation(request.getReservation());
+		}
+		
+		catch (Exception e){
+			response.setSuccess(false);
+			response.setErrorMsg(e.getClass()+": " + e.getMessage());
+		}
+		
+		return response;
+		
+	}
+	
+	public ReservationResponse cancelReservation (int id){
+		ReservationResponse response = new ReservationResponse();
+		
+		try{
+			getReservationDao().cancelReservation(id);
+		}
+		
+		catch (Exception e){
+			response.setSuccess(false);
+			response.setErrorMsg(e.getClass()+": " + e.getMessage());
+		}
+		
+		return response;
+	}
+	
+}
